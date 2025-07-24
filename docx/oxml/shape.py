@@ -56,6 +56,7 @@ class CT_Inline(BaseOxmlElement):
     extent = OneAndOnlyOne('wp:extent')
     docPr = OneAndOnlyOne('wp:docPr')
     graphic = OneAndOnlyOne('a:graphic')
+    cChart = ZeroOrOne('c:chart')
 
     @classmethod
     def new(cls, cx, cy, shape_id, pic):
