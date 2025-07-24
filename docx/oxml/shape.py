@@ -47,6 +47,7 @@ class CT_GraphicalObjectData(BaseOxmlElement):
     """
     pic = ZeroOrOne('pic:pic')
     uri = RequiredAttribute('uri', XsdToken)
+    cChart = ZeroOrOne('c:chart')
 
 
 class CT_Inline(BaseOxmlElement):
@@ -56,7 +57,6 @@ class CT_Inline(BaseOxmlElement):
     extent = OneAndOnlyOne('wp:extent')
     docPr = OneAndOnlyOne('wp:docPr')
     graphic = OneAndOnlyOne('a:graphic')
-    cChart = ZeroOrOne('c:chart')
 
     @classmethod
     def new(cls, cx, cy, shape_id, pic):
