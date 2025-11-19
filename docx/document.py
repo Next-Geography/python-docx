@@ -82,7 +82,7 @@ class Document(ElementProxy):
         new_sectPr.start_type = start_type
         return Section(new_sectPr, self._part)
 
-    def add_table(self, rows, cols, width=None, style=None):
+    def add_table(self, rows, cols, style=None, width=None):
         """
         Add a table having row and column counts of *rows* and *cols*
         respectively and table style of *style*. *style* may be a paragraph

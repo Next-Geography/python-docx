@@ -210,15 +210,15 @@ class _Cell(BlockItemContainer):
         """
         return super(_Cell, self).add_paragraph(text, style)
 
-    def add_table(self, rows, cols):
+    def add_table(self, rows, cols, width=None):
         """
         Return a table newly added to this cell after any existing cell
         content, having *rows* rows and *cols* columns. An empty paragraph is
         added after the table because Word requires a paragraph element as
         the last element in every cell.
         """
-        width = self.width if self.width is not None else Inches(1)
-        table = super(_Cell, self).add_table(rows, cols, width)
+        _width = width if width else (self.width if self.width is not None else Inches(1))
+        table = super(_Cell, self).add_table(rows, cols, _width)
         self.add_paragraph()
         return table
 
